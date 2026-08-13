@@ -369,7 +369,7 @@ const Footer = () => {
                         color: '#6a6a6a',
                         margin: 0
                     }}>
-                        © Grandeza Construction. All rights reserved.
+                        © {new Date().getFullYear()} Grandeza Construction. All rights reserved. <span style={{ color: '#4a4a4a', margin: '0 8px' }}>|</span> Made by 100 Impressions Ltd
                     </p>
                     <div style={{ display: 'flex', gap: '30px' }}>
                         <a href="#" style={{
