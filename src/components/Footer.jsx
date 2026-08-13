@@ -254,7 +254,7 @@ const Footer = () => {
                         <ul style={{ listStyle: 'none', padding: 0 }}>
                             <li style={{ marginBottom: '20px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                                 <i className="fas fa-clock" style={{ color: 'var(--primary-color)', fontSize: '1rem', marginTop: '3px' }}></i>
-                                <span style={{ fontSize: '0.938rem', lineHeight: 1.6 }}>Mon - Fri: 8.00am - 6.00pm</span>
+                                <span style={{ fontSize: '0.938rem', lineHeight: 1.6 }}>Mon - Fri: 8:00am - 5:00pm</span>
                             </li>
                             <li style={{ marginBottom: '20px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                                 <i className="fas fa-map-marker-alt" style={{ color: 'var(--primary-color)', fontSize: '1rem', marginTop: '3px' }}></i>
