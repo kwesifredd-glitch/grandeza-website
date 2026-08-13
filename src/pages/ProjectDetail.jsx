@@ -1,14 +1,26 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { ArrowLeft, MapPin, Calendar, DollarSign, Clock, CheckCircle } from 'lucide-react';
+import { ArrowLeft, MapPin, Calendar, Clock, CheckCircle } from 'lucide-react';
 import { getProjectById } from '../data/projectsData';
 import AntigravityShapes from '../components/AntigravityShapes';
+import useSEO from '../hooks/useSEO';
 
 const ProjectDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = getProjectById(id);
     const [selectedImage, setSelectedImage] = useState(0);
+
+    // Dynamic SEO per project
+    useSEO({
+        title: project ? project.title : 'Project',
+        description: project
+            ? `${project.title} — ${project.location}. ${project.description ? project.description.slice(0, 130) : 'A quality construction project by Grandeza Construction Limited in Ghana.'}`
+            : 'Project details — Grandeza Construction Limited.',
+        canonicalPath: `/projects/${id}`,
+        image: project ? `https://www.grandezaconstruction.com.gh${project.mainImage}` : undefined,
+        keywords: project ? `${project.title}, construction Ghana, ${project.category}, Grandeza project` : 'construction project Ghana',
+    });
 
     if (!project) {
         return (
@@ -86,13 +98,7 @@ const ProjectDetail = () => {
                             </div>
                             <p style={{ fontSize: '1.125rem', color: 'var(--secondary-color)', fontWeight: 600 }}>{project.year}</p>
                         </div>
-                        <div>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '10px' }}>
-                                <DollarSign size={20} />
-                                <strong style={{ fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Value</strong>
-                            </div>
-                            <p style={{ fontSize: '1.125rem', color: 'var(--secondary-color)', fontWeight: 600 }}>{project.value}</p>
-                        </div>
+
                         <div>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '10px' }}>
                                 <Clock size={20} />
@@ -273,19 +279,7 @@ const ProjectDetail = () => {
                                         </p>
                                         <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)' }}>{project.category}</p>
                                     </div>
-                                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '25px' }}>
-                                        <p style={{
-                                            fontSize: '0.875rem',
-                                            color: 'var(--primary-color)',
-                                            marginBottom: '8px',
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '1px',
-                                            fontWeight: 600
-                                        }}>
-                                            Project Value
-                                        </p>
-                                        <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)' }}>{project.value}</p>
-                                    </div>
+
                                     <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '25px' }}>
                                         <p style={{
                                             fontSize: '0.875rem',

@@ -3,16 +3,25 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { projectsData } from '../data/projectsData';
+import useSEO from '../hooks/useSEO';
+
+const slides = [
+    '/images/Home-banner.jpg',
+    '/images/grandeza-site-engineers.jpg',
+    '/images/grandeza-team-site.jpg',
+    '/images/construction-worker-hardhat-blueprints-and-const-2021-12-09-12-50-53-utc.jpg'
+];
 
 const Home = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    useSEO({
+        title: 'We Build Your Dream',
+        description: 'Grandeza Construction Limited is a premier building and civil engineering firm in Ghana, delivering excellence, innovation, and quality infrastructure for national development.',
+        canonicalPath: '/',
+        keywords: 'construction company Ghana, civil engineering Ghana, building contractor Accra, infrastructure Ghana',
+        image: 'https://www.grandezaconstruction.com.gh/images/Home-banner.jpg',
+    });
 
-    const slides = [
-        '/images/Home-banner.jpg',
-        '/images/grandeza-site-engineers.jpg',
-        '/images/grandeza-team-site.jpg',
-        '/images/construction-worker-hardhat-blueprints-and-const-2021-12-09-12-50-53-utc.jpg'
-    ];
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -92,7 +101,7 @@ const Home = () => {
                 <div className="container">
                     <div className="stats-grid">
                         <div className="stat-item">
-                            <h2>15+</h2>
+                            <h2>10+</h2>
                             <p>Years Combined Experience</p>
                         </div>
                         <div className="stat-item">

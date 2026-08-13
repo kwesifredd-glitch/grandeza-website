@@ -1,8 +1,17 @@
 import AntigravityShapes from '../components/AntigravityShapes';
 import { Link } from 'react-router-dom';
 import { Play, CheckCircle } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 const About = () => {
+    useSEO({
+        title: 'About Us',
+        description: 'Learn about Grandeza Construction Limited — our mission, vision, values, leadership team, and our decade of delivering quality construction and civil engineering projects across Ghana.',
+        canonicalPath: '/about',
+        keywords: 'about Grandeza Construction, construction company Ghana, civil engineering team, managing director Ghana',
+        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-about-hero.jpg',
+    });
+
     return (
         <>
             {/* Page Header */}
@@ -232,8 +241,8 @@ const About = () => {
                     }}>
                         <div className="text-center">
                             <img
-                                src="/images/grandeza-engineers-team.jpg"
-                                alt="Managing Director"
+                                src="/images/dugbatey-hoese-teye.jpg"
+                                alt="Dugbatey Hoese Teye - Managing Director"
                                 style={{
                                     width: '240px',
                                     height: '240px',
@@ -244,14 +253,14 @@ const About = () => {
                                     border: '5px solid var(--primary-color)'
                                 }}
                             />
-                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>Kwame Mensah</h3>
+                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>Dugbatey Hoese Teye</h3>
                             <p style={{ color: 'var(--primary-color)', fontWeight: 600, marginBottom: '10px', fontSize: '1rem' }}>Managing Director</p>
-                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>15+ years in construction management</p>
+                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>BSc Construction Project Management MCIOB</p>
                         </div>
                         <div className="text-center">
                             <img
-                                src="/images/grandeza-site-engineers.jpg"
-                                alt="Lead Engineer"
+                                src="/images/ebenezer-m-akita.jpg"
+                                alt="Ebenezer M. Akita - Director of Projects"
                                 style={{
                                     width: '240px',
                                     height: '240px',
@@ -262,14 +271,14 @@ const About = () => {
                                     border: '5px solid var(--primary-color)'
                                 }}
                             />
-                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>Ama Osei</h3>
-                            <p style={{ color: 'var(--primary-color)', fontWeight: 600, marginBottom: '10px', fontSize: '1rem' }}>Lead Civil Engineer</p>
-                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>GhIE Certified Professional</p>
+                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>Ebenezer M. Akita</h3>
+                            <p style={{ color: 'var(--primary-color)', fontWeight: 600, marginBottom: '10px', fontSize: '1rem' }}>Director of Projects / Quality Manager</p>
+                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>BSc (Design) Dip. Arch AGIA</p>
                         </div>
                         <div className="text-center">
                             <img
-                                src="/images/grandeza-team-site.jpg"
-                                alt="Project Manager"
+                                src="/images/effie-buraba-bonful.jpg"
+                                alt="Effie Buraba Bonful - Director of Information Systems / Finance"
                                 style={{
                                     width: '240px',
                                     height: '240px',
@@ -280,9 +289,9 @@ const About = () => {
                                     border: '5px solid var(--primary-color)'
                                 }}
                             />
-                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>John Koffi</h3>
-                            <p style={{ color: 'var(--primary-color)', fontWeight: 600, marginBottom: '10px', fontSize: '1rem' }}>Head of Projects</p>
-                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>PMP Certified Project Manager</p>
+                            <h3 className="heading-md" style={{ marginBottom: '8px' }}>Effie Buraba Bonful</h3>
+                            <p style={{ color: 'var(--primary-color)', fontWeight: 600, marginBottom: '10px', fontSize: '1rem' }}>Director of Information Systems / Finance</p>
+                            <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>EMBA(Finance) BSc (Hons) Computer Science</p>
                         </div>
                     </div>
                 </div>

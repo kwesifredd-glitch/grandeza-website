@@ -1,6 +1,15 @@
 import AntigravityShapes from '../components/AntigravityShapes';
+import useSEO from '../hooks/useSEO';
 
 const Blog = () => {
+    useSEO({
+        title: 'Blog & News',
+        description: 'Stay updated with the latest news, insights, and industry updates from Grandeza Construction Limited — Ghana’s leading construction and civil engineering firm.',
+        canonicalPath: '/blog',
+        keywords: 'construction news Ghana, civil engineering blog, Grandeza news, building industry Ghana',
+        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-site-engineers.jpg',
+    });
+
     const posts = [
         {
             image: '/images/grandeza-site-engineers.jpg',

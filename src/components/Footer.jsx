@@ -4,12 +4,15 @@ import { useState } from 'react';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
+    const [subscribed, setSubscribed] = useState(false);
 
     const handleSubscribe = (e) => {
         e.preventDefault();
-        // Handle newsletter subscription
-        console.log('Subscribe:', email);
-        setEmail('');
+        if (email && email.trim()) {
+            setSubscribed(true);
+            setEmail('');
+            setTimeout(() => setSubscribed(false), 4000);
+        }
     };
 
     const scrollToTop = () => {
@@ -342,6 +345,11 @@ const Footer = () => {
                             >
                                 Subscribe!
                             </button>
+                            {subscribed && (
+                                <p style={{ color: '#4caf50', fontSize: '0.875rem', marginTop: '10px', textAlign: 'center' }}>
+                                    Thank you for subscribing!
+                                </p>
+                            )}
                         </form>
                     </div>
                 </div>

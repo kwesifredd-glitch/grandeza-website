@@ -1,7 +1,16 @@
 import AntigravityShapes from '../components/AntigravityShapes';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const Careers = () => {
+    useSEO({
+        title: 'Careers',
+        description: 'Join Grandeza Construction Limited — Ghana’s premier building and civil engineering firm. Explore career opportunities and build your future with our expert team.',
+        canonicalPath: '/careers',
+        keywords: 'construction jobs Ghana, civil engineering careers, Grandeza careers, building contractor jobs Accra',
+        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-team-site.jpg',
+    });
+
     return (
         <>
             {/* Page Header */}

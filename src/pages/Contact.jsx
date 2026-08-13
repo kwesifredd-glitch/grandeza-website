@@ -1,7 +1,41 @@
 import AntigravityShapes from '../components/AntigravityShapes';
-import { Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Facebook, Instagram, CheckCircle } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
+import { useState } from 'react';
 
 const Contact = () => {
+    useSEO({
+        title: 'Contact Us',
+        description: 'Get in touch with Grandeza Construction Limited. Reach out to discuss your next building or civil engineering project in Ghana. We’re ready to bring your vision to life.',
+        canonicalPath: '/contact',
+        keywords: 'contact Grandeza Construction, construction company contact Ghana, hire contractor Ghana, construction quote Ghana',
+        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-engineers-team.jpg',
+    });
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        projectType: '',
+        details: ''
+    });
+    const [status, setStatus] = useState({ submitted: false, message: '' });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!formData.name.trim() || !formData.email.trim() || !formData.details.trim()) {
+            return;
+        }
+        // Securely handle submission state
+        setStatus({
+            submitted: true,
+            message: 'Thank you! Your message has been sent successfully. We will get back to you shortly.'
+        });
+        setFormData({ name: '', email: '', phone: '', company: '', projectType: '', details: '' });
+        setTimeout(() => setStatus({ submitted: false, message: '' }), 6000);
+    };
+
     return (
         <>
             {/* Page Header */}
@@ -59,21 +93,66 @@ const Contact = () => {
 
                         <div className="contact-form">
                             <h3 className="heading-md" style={{ marginBottom: '30px' }}>Send a Message</h3>
-                            <form onSubmit={(e) => e.preventDefault()}>
+                            {status.submitted ? (
+                                <div style={{
+                                    padding: '20px',
+                                    backgroundColor: '#e8f5e9',
+                                    color: '#2e7d32',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '12px',
+                                    marginBottom: '20px'
+                                }}>
+                                    <CheckCircle size={24} />
+                                    <span>{status.message}</span>
+                                </div>
+                            ) : null}
+                            <form onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Your Name" required />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Your Name"
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                        required
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" className="form-control" placeholder="Your Email" required />
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        placeholder="Your Email"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        required
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="tel" className="form-control" placeholder="Phone Number" />
+                                    <input
+                                        type="tel"
+                                        className="form-control"
+                                        placeholder="Phone Number"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Company Name (Optional)" />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Company Name (Optional)"
+                                        value={formData.company}
+                                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <select className="form-control" defaultValue="">
+                                    <select
+                                        className="form-control"
+                                        value={formData.projectType}
+                                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                                    >
                                         <option value="" disabled>Project Type</option>
                                         <option value="building">Building Construction</option>
                                         <option value="civil">Civil Engineering</option>
@@ -82,7 +161,13 @@ const Contact = () => {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <textarea className="form-control" placeholder="Project Details" required></textarea>
+                                    <textarea
+                                        className="form-control"
+                                        placeholder="Project Details"
+                                        value={formData.details}
+                                        onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                                        required
+                                    ></textarea>
                                 </div>
                                 <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
                             </form>

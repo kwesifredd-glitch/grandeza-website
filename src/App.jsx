@@ -1,7 +1,7 @@
-import { useRef } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import ScrollToTop from './components/ScrollToTop';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -20,6 +20,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <CustomCursor />
       <Navbar />
       <AnimatePresence mode="wait">

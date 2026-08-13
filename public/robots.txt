@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.grandezaconstruction.com.gh/sitemap.xml

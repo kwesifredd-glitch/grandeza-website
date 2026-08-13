@@ -21,10 +21,9 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close menu when route changes
-    useEffect(() => {
+    const closeMenu = () => {
         setIsOpen(false);
-    }, [location]);
+    };
 
     const isActive = (path) => {
         return location.pathname === path ? 'active' : '';
@@ -34,17 +33,17 @@ const Navbar = () => {
         <header id="header" className={scrolled ? 'scrolled' : ''}>
             <div className="container">
                 <nav>
-                    <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <Link to="/" className="logo" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <img src="/images/Grandeza-logo-landscape-white.png" alt="Grandeza Logo" style={{ height: '70px', width: 'auto' }} />
                     </Link>
                     <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-                        <li><Link to="/" className={isActive('/')}>Home</Link></li>
-                        <li><Link to="/about" className={isActive('/about')}>About</Link></li>
-                        <li><Link to="/services" className={isActive('/services')}>Services</Link></li>
-                        <li><Link to="/projects" className={isActive('/projects')}>Projects</Link></li>
-                        <li><Link to="/blog" className={isActive('/blog')}>News</Link></li>
-                        <li><Link to="/careers" className={isActive('/careers')}>Careers</Link></li>
-                        <li><Link to="/contact" className="btn btn-primary" style={{ padding: '12px 28px' }}>Get a Quote</Link></li>
+                        <li><Link to="/" className={isActive('/')} onClick={closeMenu}>Home</Link></li>
+                        <li><Link to="/about" className={isActive('/about')} onClick={closeMenu}>About</Link></li>
+                        <li><Link to="/services" className={isActive('/services')} onClick={closeMenu}>Services</Link></li>
+                        <li><Link to="/projects" className={isActive('/projects')} onClick={closeMenu}>Projects</Link></li>
+                        <li><Link to="/blog" className={isActive('/blog')} onClick={closeMenu}>News</Link></li>
+                        <li><Link to="/careers" className={isActive('/careers')} onClick={closeMenu}>Careers</Link></li>
+                        <li><Link to="/contact" className="btn btn-primary" onClick={closeMenu} style={{ padding: '12px 28px' }}>Get a Quote</Link></li>
                     </ul>
                     <div className="hamburger" onClick={toggleMenu}>
                         {isOpen ? <X size={28} /> : <Menu size={28} />}

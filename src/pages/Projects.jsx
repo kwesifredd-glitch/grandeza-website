@@ -2,8 +2,17 @@ import AntigravityShapes from '../components/AntigravityShapes';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
+import useSEO from '../hooks/useSEO';
 
 const Projects = () => {
+    useSEO({
+        title: 'Our Projects',
+        description: 'Browse Grandeza Construction’s portfolio of completed projects across Ghana — residential, commercial, government, community, civil, and healthcare infrastructure.',
+        canonicalPath: '/projects',
+        keywords: 'construction projects Ghana, building portfolio Ghana, civil engineering projects, completed projects Accra',
+        image: 'https://www.grandezaconstruction.com.gh/images/Home-banner.jpg',
+    });
+
     const [filter, setFilter] = useState('All');
 
     const categories = ['All', 'Community', 'Government', 'Residential', 'Commercial', 'Civil', 'Healthcare'];
