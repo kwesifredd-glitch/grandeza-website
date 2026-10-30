@@ -369,7 +369,15 @@ const Footer = () => {
                         color: '#6a6a6a',
                         margin: 0
                     }}>
-                        © {new Date().getFullYear()} Grandeza Construction. All rights reserved. <span style={{ color: '#4a4a4a', margin: '0 8px' }}>|</span> Made by 100 Impressions Ltd
+                        © {new Date().getFullYear()} Grandeza Construction. All rights reserved. <span style={{ color: '#4a4a4a', margin: '0 8px' }}>|</span> Designed and built by{' '}
+                        <a href="https://www.100impressions.com/" target="_blank" rel="noopener" style={{
+                            color: '#9a9a9a',
+                            transition: 'var(--transition)'
+                        }}
+                            onMouseEnter={(e) => e.target.style.color = 'var(--primary-color)'}
+                            onMouseLeave={(e) => e.target.style.color = '#9a9a9a'}>
+                            100 Impressions
+                        </a>
                     </p>
                     <div style={{ display: 'flex', gap: '30px' }}>
                         <a href="#" style={{
