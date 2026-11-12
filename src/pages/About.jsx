@@ -54,7 +54,7 @@ const About = () => {
                             </div>
                         </div>
                         <div>
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/high-angle-measuring-tools-desk-still-life.jpg"
                                 alt="Construction Planning"
                                 style={{ width: '100%', height: '550px', objectFit: 'cover' }}
@@ -240,7 +240,7 @@ const About = () => {
                         marginTop: '60px'
                     }}>
                         <div className="text-center">
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/dugbatey-hoese-teye.jpg"
                                 alt="Dugbatey Hoese Teye - Managing Director"
                                 style={{
@@ -258,7 +258,7 @@ const About = () => {
                             <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>BSc Construction Project Management MCIOB</p>
                         </div>
                         <div className="text-center">
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/ebenezer-m-akita.jpg"
                                 alt="Ebenezer M. Akita - Director of Projects"
                                 style={{
@@ -276,7 +276,7 @@ const About = () => {
                             <p style={{ fontSize: '0.938rem', color: 'var(--text-light)' }}>BSc (Design) Dip. Arch AGIA</p>
                         </div>
                         <div className="text-center">
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/effie-buraba-bonful.jpg"
                                 alt="Effie Buraba Bonful - Director of Information Systems / Finance"
                                 style={{

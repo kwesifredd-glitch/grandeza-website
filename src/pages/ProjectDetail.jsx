@@ -119,7 +119,7 @@ const ProjectDetail = () => {
                             {/* Main Image Gallery */}
                             <div style={{ marginBottom: '60px' }}>
                                 <div style={{ marginBottom: '20px' }}>
-                                    <img
+                                    <img decoding="async" fetchPriority="high"
                                         src={project.gallery[selectedImage]}
                                         alt={`${project.title} - Image ${selectedImage + 1}`}
                                         style={{
@@ -132,7 +132,7 @@ const ProjectDetail = () => {
                                 </div>
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                                     {project.gallery.map((image, index) => (
-                                        <img
+                                        <img loading="lazy" decoding="async"
                                             key={index}
                                             src={image}
                                             alt={`Thumbnail ${index + 1}`}

@@ -53,7 +53,7 @@ const Careers = () => {
                             </div>
                         </div>
                         <div>
-                            <img src="/images/grandeza-engineers-team.jpg" alt="Team Work" style={{ width: '100%', height: '550px', objectFit: 'cover' }} />
+                            <img loading="lazy" decoding="async" src="/images/grandeza-engineers-team.jpg" alt="Team Work" style={{ width: '100%', height: '550px', objectFit: 'cover' }} />
                         </div>
                     </div>
                 </div>

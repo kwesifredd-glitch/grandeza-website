@@ -95,7 +95,7 @@ const Projects = () => {
                                 to={`/projects/${project.id}`}
                                 className="project-card"
                             >
-                                <img src={project.mainImage} alt={project.title} />
+                                <img loading="lazy" decoding="async" src={project.mainImage} alt={project.title} />
                                 <div className="project-overlay">
                                     <span className="project-cat">{project.category}</span>
                                     <h3 className="project-title">{project.title}</h3>

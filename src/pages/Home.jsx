@@ -31,6 +31,14 @@ const Home = () => {
         return () => clearInterval(timer);
     }, []);
 
+    // Warm the browser cache with the other slides after the first one has shown
+    useEffect(() => {
+        const warm = () => slides.slice(1).forEach((src) => { const img = new Image(); img.decoding = 'async'; img.src = src; });
+        if (document.readyState === 'complete') warm();
+        else window.addEventListener('load', warm, { once: true });
+        return () => window.removeEventListener('load', warm);
+    }, []);
+
     return (
         <>
             {/* Hero Section with Image Slider */}
@@ -125,7 +133,7 @@ const Home = () => {
                 <div className="container">
                     <div className="about-grid">
                         <div>
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/grandeza-team-site.jpg"
                                 alt="Construction Team at Work"
                                 style={{ width: '100%', height: '550px', objectFit: 'cover' }}
@@ -250,7 +258,7 @@ const Home = () => {
                     <div className="projects-grid">
                         {projectsData.slice(0, 3).map((project) => (
                             <Link key={project.id} to={`/projects/${project.id}`} className="project-card">
-                                <img src={project.mainImage} alt={project.title} />
+                                <img loading="lazy" decoding="async" src={project.mainImage} alt={project.title} />
                                 <div className="project-overlay">
                                     <span className="project-cat">{project.category}</span>
                                     <h3 className="project-title">{project.title}</h3>

@@ -75,7 +75,7 @@ const Blog = () => {
                                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
                                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                                 <div style={{ height: '280px', overflow: 'hidden' }}>
-                                    <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'var(--transition)' }}
+                                    <img loading="lazy" decoding="async" src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'var(--transition)' }}
                                         onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
                                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'} />
                                 </div>
