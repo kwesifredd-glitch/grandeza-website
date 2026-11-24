@@ -1194,12 +1194,12 @@ body.menu-open {
 
 @media (max-width: 576px) {
   .nav-links {
-    padding: 140px 24px 28px;
+    padding: 140px 20px 28px;
   }
 
   .nav-links::before {
     top: 124px;
-    left: 24px;
+    left: 20px;
   }
 
   .nav-links li > a:not(.btn) {
@@ -1370,5 +1370,116 @@ textarea:focus-visible {
   .stats-section.glass-section .stat-item p {
     font-size: 0.72rem;
     letter-spacing: 1px;
+  }
+}
+
+/* ===== Home banner: crossfade with slow zoom (Ken Burns) ===== */
+.hero-home {
+  background: var(--secondary-color);
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* the outgoing photo stays underneath, still moving, while the new one fades in */
+.hero-slide.is-leaving {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slide.is-leaving:not(.is-active) {
+  transition-delay: 1.8s;
+  opacity: 0;
+}
+
+.hero-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.kb {
+  animation-duration: 10s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-fill-mode: both;
+}
+
+.kb-in {
+  animation-name: kbIn;
+}
+
+.kb-out {
+  animation-name: kbOut;
+}
+
+/* each photo drifts toward a different corner so no two moves look alike */
+.kb-drift-0 { transform-origin: 30% 40%; }
+.kb-drift-1 { transform-origin: 70% 35%; }
+.kb-drift-2 { transform-origin: 60% 65%; }
+.kb-drift-3 { transform-origin: 35% 60%; }
+
+@keyframes kbIn {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.16); }
+}
+
+@keyframes kbOut {
+  from { transform: scale(1.18); }
+  to { transform: scale(1.03); }
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(90deg, rgba(19, 36, 66, 0.82) 0%, rgba(19, 36, 66, 0.62) 55%, rgba(19, 36, 66, 0.5) 100%),
+    linear-gradient(0deg, rgba(19, 36, 66, 0.45) 0%, rgba(19, 36, 66, 0) 35%);
+}
+
+.hero-home .hero-shapes {
+  z-index: 4;
+}
+
+.hero-home > .container {
+  position: relative;
+  z-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kb {
+    animation: none;
+    transform: scale(1.04);
+  }
+
+  .hero-slide {
+    transition-duration: 0.6s;
+  }
+}
+
+/* Phones: line the logo and menu button up with the page content */
+@media (max-width: 576px) {
+  nav {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

@@ -22,14 +22,28 @@ const Home = () => {
     });
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [previousSlide, setPreviousSlide] = useState(null);
+    // How many times each slide has been shown: a new number restarts its zoom from the start
+    const [plays, setPlays] = useState(() => slides.map((_, i) => (i === 0 ? 1 : 0)));
 
+    const goTo = (next) => {
+        if (next === currentSlide) return;
+        setPreviousSlide(currentSlide);
+        setPlays((p) => p.map((n, i) => (i === next ? n + 1 : n)));
+        setCurrentSlide(next);
+    };
+
+    // Move to the next photo every 7 seconds; picking a photo restarts the countdown
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000);
+        const timer = setTimeout(() => {
+            const next = (currentSlide + 1) % slides.length;
+            setPreviousSlide(currentSlide);
+            setPlays((p) => p.map((n, i) => (i === next ? n + 1 : n)));
+            setCurrentSlide(next);
+        }, 7000);
 
-        return () => clearInterval(timer);
-    }, []);
+        return () => clearTimeout(timer);
+    }, [currentSlide]);
 
     // Warm the browser cache with the other slides after the first one has shown
     useEffect(() => {
@@ -42,19 +56,35 @@ const Home = () => {
     return (
         <>
             {/* Hero Section with Image Slider */}
-            <section id="home" className="hero" style={{
+            <section id="home" className="hero hero-home" style={{
                 position: 'relative',
                 height: '100vh',
                 minHeight: '600px',
                 display: 'flex',
                 alignItems: 'center',
-                overflow: 'hidden',
-                transition: 'background-image 1s ease-in-out',
-                background: `linear-gradient(rgba(19, 36, 66, 0.7), rgba(19, 36, 66, 0.7)), url(${slides[currentSlide]})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
+                overflow: 'hidden'
             }}>
+                {/* Banner photos: each one fades in while slowly zooming; alternate slides zoom in and out */}
+                <div className="hero-slides" aria-hidden="true">
+                    {slides.map((src, index) => (
+                        <div
+                            key={src}
+                            className={`hero-slide${index === currentSlide ? ' is-active' : ''}${index === previousSlide ? ' is-leaving' : ''}`}
+                        >
+                            {plays[index] > 0 && (
+                                <img
+                                    key={plays[index]}
+                                    src={src}
+                                    alt=""
+                                    className={`kb kb-${index % 2 === 0 ? 'in' : 'out'} kb-drift-${index % 4}`}
+                                    fetchPriority={index === 0 ? 'high' : 'low'}
+                                    decoding="async"
+                                />
+                            )}
+                        </div>
+                    ))}
+                    <div className="hero-shade" />
+                </div>
                 <AntigravityShapes />
                 <div className="container">
                     <div className="hero-content">
@@ -89,7 +119,10 @@ const Home = () => {
                     {slides.map((_, index) => (
                         <button
                             key={index}
-                            onClick={() => setCurrentSlide(index)}
+                            type="button"
+                            aria-label={`Show banner photo ${index + 1}`}
+                            aria-current={currentSlide === index}
+                            onClick={() => goTo(index)}
                             style={{
                                 width: currentSlide === index ? '40px' : '12px',
                                 height: '12px',
