@@ -1,6 +1,6 @@
 import AntigravityShapes from '../components/AntigravityShapes';
 import { Link } from 'react-router-dom';
-import { Play, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 const About = () => {
@@ -47,10 +47,9 @@ const About = () => {
                             </p>
                             <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                                 <Link to="/services" className="btn btn-primary">Learn More</Link>
-                                <button className="btn btn-outline-dark" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <Play size={18} fill="var(--secondary-color)" />
-                                    Watch Video
-                                </button>
+                                <Link to="/projects" className="btn btn-outline-dark" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    Our Projects
+                                </Link>
                             </div>
                         </div>
                         <div>

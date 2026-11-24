@@ -38,7 +38,7 @@ const ProjectDetail = () => {
     return (
         <>
             {/* Page Header */}
-            <section className="hero hero-page" style={{
+            <section className="hero hero-page hero-project" style={{
                 background: `linear-gradient(rgba(19, 36, 66, 0.85), rgba(19, 36, 66, 0.85)), url(${project.mainImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -63,7 +63,7 @@ const ProjectDetail = () => {
                         <span className="section-subtitle" style={{ color: 'var(--primary-color)' }}>
                             {project.category.toUpperCase()}
                         </span>
-                        <h1 className="heading-xl" style={{ fontSize: '3.5rem' }}>{project.title}</h1>
+                        <h1 className="heading-xl project-hero-title">{project.title}</h1>
                         <p className="text-lead" style={{ color: 'rgba(255,255,255,0.85)' }}>
                             {project.shortDescription}
                         </p>

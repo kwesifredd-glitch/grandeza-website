@@ -72,7 +72,7 @@ const Contact = () => {
                                 <div className="icon-box"><i className="fas fa-phone-alt"></i></div>
                                 <div>
                                     <h4>Call Us</h4>
-                                    <p>+233 24 972 3920</p>
+                                    <p><a href="tel:+233249723920" className="contact-link">+233 24 972 3920</a></p>
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
                                 <div className="icon-box"><i className="fas fa-envelope"></i></div>
                                 <div>
                                     <h4>Email Us</h4>
-                                    <p>admin@grandezaconstr.com</p>
+                                    <p><a href="mailto:admin@grandezaconstr.com" className="contact-link">admin@grandezaconstr.com</a></p>
                                 </div>
                             </div>
 
@@ -176,11 +176,15 @@ const Contact = () => {
                 </div>
             </section>
 
-            {/* Map (Optional Placeholder) */}
+            {/* Map */}
             <section>
-                <div style={{ width: '100%', height: '400px', backgroundColor: '#ddd', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <p style={{ color: '#666', fontSize: '1.2rem' }}><i className="fas fa-map"></i> Google Map Integration Area</p>
-                </div>
+                <iframe
+                    className="contact-map"
+                    title="Map showing the Grandeza Construction office in Spintex, Accra"
+                    src="https://www.google.com/maps?q=Nuumo%20Larweh%20Street%2C%20Spintex%2C%20Accra%2C%20Ghana&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
             </section>
         </>
     );

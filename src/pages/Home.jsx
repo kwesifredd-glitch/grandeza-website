@@ -1,6 +1,6 @@
 import AntigravityShapes from '../components/AntigravityShapes';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { projectsData } from '../data/projectsData';
 import useSEO from '../hooks/useSEO';
@@ -69,9 +69,9 @@ const Home = () => {
                             <Link to="/contact" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 Get a Quote <ArrowRight size={20} />
                             </Link>
-                            <button className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px', borderColor: 'var(--white)', color: 'var(--white)' }}>
-                                <Play size={20} fill="var(--white)" /> Watch Video
-                            </button>
+                            <Link to="/projects" className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px', borderColor: 'var(--white)', color: 'var(--white)' }}>
+                                Our Projects
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@ const Home = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="stats-section">
+            <section className="stats-section glass-section">
                 <div className="container">
                     <div className="stats-grid">
                         <div className="stat-item">
@@ -215,7 +215,7 @@ const Home = () => {
             </section>
 
             {/* Process Section */}
-            <section className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
+            <section className="section-padding glass-section process-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-subtitle">OUR PROCESS</span>
