@@ -7,7 +7,7 @@ const Blog = () => {
         description: 'Stay updated with the latest news, insights, and industry updates from Grandeza Construction Limited — Ghana’s leading construction and civil engineering firm.',
         canonicalPath: '/blog',
         keywords: 'construction news Ghana, civil engineering blog, Grandeza news, building industry Ghana',
-        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-site-engineers.jpg',
+        image: 'https://www.grandezaconstr.com/images/grandeza-site-engineers.jpg',
     });
 
     const posts = [
@@ -69,7 +69,7 @@ const Blog = () => {
             {/* Blog Grid */}
             <section className="section-padding">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '40px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(380px, 100%), 1fr))', gap: '40px' }}>
                         {posts.map((post, index) => (
                             <div key={index} style={{ background: 'var(--white)', border: '1px solid var(--border-color)', overflow: 'hidden', transition: 'var(--transition)', cursor: 'pointer' }}
                                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}

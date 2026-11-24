@@ -8,7 +8,7 @@ const Services = () => {
         description: 'Explore Grandeza Construction’s full range of services: building construction, civil engineering, project management, road works, and infrastructure development across Ghana.',
         canonicalPath: '/services',
         keywords: 'construction services Ghana, civil engineering services, building contractor, road construction Ghana, infrastructure services',
-        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-site-engineers.jpg',
+        image: 'https://www.grandezaconstr.com/images/grandeza-site-engineers.jpg',
     });
 
     return (

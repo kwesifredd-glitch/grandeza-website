@@ -22,12 +22,7 @@ const Footer = () => {
     return (
         <footer style={{ backgroundColor: '#1a1a1a', color: '#a0a0a0', position: 'relative' }}>
             <div className="container" style={{ paddingTop: '80px', paddingBottom: '50px' }}>
-                <div className="footer-grid" style={{
-                    display: 'grid',
-                    gridTemplateColumns: '2fr 1fr 1.2fr 1.5fr',
-                    gap: '60px',
-                    marginBottom: '60px'
-                }}>
+                <div className="footer-grid">
                     {/* Column 1: About */}
                     <div>
                         <Link to="/" className="footer-logo" style={{

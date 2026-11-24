@@ -9,7 +9,7 @@ const Contact = () => {
         description: 'Get in touch with Grandeza Construction Limited. Reach out to discuss your next building or civil engineering project in Ghana. We’re ready to bring your vision to life.',
         canonicalPath: '/contact',
         keywords: 'contact Grandeza Construction, construction company contact Ghana, hire contractor Ghana, construction quote Ghana',
-        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-engineers-team.jpg',
+        image: 'https://www.grandezaconstr.com/images/grandeza-engineers-team.jpg',
     });
 
     const [formData, setFormData] = useState({

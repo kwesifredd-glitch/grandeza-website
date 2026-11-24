@@ -18,7 +18,7 @@ const Home = () => {
         description: 'Grandeza Construction Limited is a premier building and civil engineering firm in Ghana, delivering excellence, innovation, and quality infrastructure for national development.',
         canonicalPath: '/',
         keywords: 'construction company Ghana, civil engineering Ghana, building contractor Accra, infrastructure Ghana',
-        image: 'https://www.grandezaconstruction.com.gh/images/Home-banner.jpg',
+        image: 'https://www.grandezaconstr.com/images/Home-banner.jpg',
     });
 
     const [currentSlide, setCurrentSlide] = useState(0);

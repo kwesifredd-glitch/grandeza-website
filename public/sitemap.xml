@@ -3,51 +3,148 @@
 
   <!-- Home -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/</loc>
+    <loc>https://www.grandezaconstr.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/about</loc>
+    <loc>https://www.grandezaconstr.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Services -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/services</loc>
+    <loc>https://www.grandezaconstr.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Projects -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/projects</loc>
+    <loc>https://www.grandezaconstr.com/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/blog</loc>
+    <loc>https://www.grandezaconstr.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Careers -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/careers</loc>
+    <loc>https://www.grandezaconstr.com/careers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Contact -->
   <url>
-    <loc>https://www.grandezaconstruction.com.gh/contact</loc>
+    <loc>https://www.grandezaconstr.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Project pages -->
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/akweteyman-mosque</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/damongo-palace</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/luxury-farmhouse</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/corporate-office</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/highway-project</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/shopping-mall</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/bridge-infrastructure</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/hohoe-health-centre</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/trassaco-residence</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/hy-residence</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/prampram-staff-accommodation</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/nag-residence-1</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/tp-academy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/afro-bullion-office</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/tdc-affordable-housing</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/babs-apartment</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/bungalow-renovation</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/carport-terminal</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.grandezaconstr.com/projects/lordina-oti</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

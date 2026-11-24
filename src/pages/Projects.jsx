@@ -10,7 +10,7 @@ const Projects = () => {
         description: 'Browse Grandeza Construction’s portfolio of completed projects across Ghana — residential, commercial, government, community, civil, and healthcare infrastructure.',
         canonicalPath: '/projects',
         keywords: 'construction projects Ghana, building portfolio Ghana, civil engineering projects, completed projects Accra',
-        image: 'https://www.grandezaconstruction.com.gh/images/Home-banner.jpg',
+        image: 'https://www.grandezaconstr.com/images/Home-banner.jpg',
     });
 
     const [filter, setFilter] = useState('All');

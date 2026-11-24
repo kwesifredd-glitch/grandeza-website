@@ -8,7 +8,7 @@ const Careers = () => {
         description: 'Join Grandeza Construction Limited — Ghana’s premier building and civil engineering firm. Explore career opportunities and build your future with our expert team.',
         canonicalPath: '/careers',
         keywords: 'construction jobs Ghana, civil engineering careers, Grandeza careers, building contractor jobs Accra',
-        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-team-site.jpg',
+        image: 'https://www.grandezaconstr.com/images/grandeza-team-site.jpg',
     });
 
     return (
@@ -41,7 +41,7 @@ const Careers = () => {
                             <p>
                                 Join a team that is passionate about building sustainable infrastructure that empowers communities. We offer competitive benefits, continuous training, and clear paths for career advancement.
                             </p>
-                            <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                            <div className="careers-perks" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                                 <div style={{ padding: '20px', background: 'var(--light-gray)', border: '1px solid var(--border-color)' }}>
                                     <h4 style={{ marginBottom: '10px', color: 'var(--primary-color)' }}><i className="fas fa-graduation-cap"></i> Training</h4>
                                     <p style={{ fontSize: '0.938rem', color: 'var(--text-light)', margin: 0 }}>Professional development programs</p>

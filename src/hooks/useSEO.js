@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_URL = 'https://www.grandezaconstruction.com.gh';
+const SITE_URL = 'https://www.grandezaconstr.com';
 const DEFAULT_IMAGE = `${SITE_URL}/images/Home-banner.jpg`;
 const SITE_NAME = 'Grandeza Construction Limited';
 const TWITTER_HANDLE = '@GrandezaGhana';

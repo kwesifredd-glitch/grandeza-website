@@ -18,7 +18,7 @@ const ProjectDetail = () => {
             ? `${project.title} — ${project.location}. ${project.description ? project.description.slice(0, 130) : 'A quality construction project by Grandeza Construction Limited in Ghana.'}`
             : 'Project details — Grandeza Construction Limited.',
         canonicalPath: `/projects/${id}`,
-        image: project ? `https://www.grandezaconstruction.com.gh${project.mainImage}` : undefined,
+        image: project ? `https://www.grandezaconstr.com${project.mainImage}` : undefined,
         keywords: project ? `${project.title}, construction Ghana, ${project.category}, Grandeza project` : 'construction project Ghana',
     });
 
@@ -113,7 +113,7 @@ const ProjectDetail = () => {
             {/* Main Content */}
             <section className="section-padding">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '80px', alignItems: 'start' }}>
+                    <div className="project-detail-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '80px', alignItems: 'start' }}>
                         {/* Left Column - Description and Images */}
                         <div>
                             {/* Main Image Gallery */}
@@ -169,7 +169,7 @@ const ProjectDetail = () => {
                             {/* Scope of Work */}
                             <div style={{ marginBottom: '60px' }}>
                                 <h2 className="heading-lg" style={{ marginBottom: '25px' }}>Scope of Work</h2>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                                <div className="project-scope-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                                     {project.scope.map((item, index) => (
                                         <div key={index} style={{
                                             display: 'flex',

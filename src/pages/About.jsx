@@ -9,7 +9,7 @@ const About = () => {
         description: 'Learn about Grandeza Construction Limited — our mission, vision, values, leadership team, and our decade of delivering quality construction and civil engineering projects across Ghana.',
         canonicalPath: '/about',
         keywords: 'about Grandeza Construction, construction company Ghana, civil engineering team, managing director Ghana',
-        image: 'https://www.grandezaconstruction.com.gh/images/grandeza-about-hero.jpg',
+        image: 'https://www.grandezaconstr.com/images/grandeza-about-hero.jpg',
     });
 
     return (

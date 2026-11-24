@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -273,6 +274,7 @@ nav {
   z-index: 1;
   pointer-events: none;
   opacity: 0.6;
+  overflow: hidden;
 }
 
 .shape {
@@ -625,7 +627,7 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
   gap: 60px;
   margin-bottom: 60px;
 }
@@ -839,7 +841,9 @@ body:hover .cursor-outline {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
+    visibility: hidden;
     width: 80%;
     max-width: 400px;
     height: 100vh;
@@ -847,13 +851,26 @@ body:hover .cursor-outline {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.4s;
+    box-shadow: none;
     gap: 30px;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
+  }
+
+  /* Project page: details panel goes under the photos */
+  .project-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  .project-detail-grid > div:last-child > div {
+    position: static !important;
   }
 
   .nav-links li {
@@ -917,5 +934,18 @@ body:hover .cursor-outline {
   .btn {
     width: 100%;
     text-align: center;
+  }
+
+  .project-scope-grid,
+  .careers-perks {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Orange cursor only for mouse users, never on touch screens */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
   }
 }
