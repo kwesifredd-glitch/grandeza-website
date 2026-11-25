@@ -1,8 +1,64 @@
 import AntigravityShapes from '../components/AntigravityShapes';
 import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle, Building2, Route, DraftingCompass, ClipboardList, HardHat, Handshake } from 'lucide-react';
+import { useRef } from 'react';
 import useSEO from '../hooks/useSEO';
+import useCardMotion from '../hooks/useCardMotion';
+
+const services = [
+    {
+        icon: Building2,
+        title: 'Building Construction',
+        text: 'High-quality residential and commercial buildings, built with attention to detail.',
+        points: ['Residential and commercial buildings', 'Foundations through to finishing', 'Structural integrity and quality finishes'],
+        image: '/images/services/building-construction.jpg',
+        alt: 'A completed modern building by Grandeza Construction',
+    },
+    {
+        icon: Route,
+        title: 'Civil Engineering',
+        text: 'Infrastructure and community projects engineered to last.',
+        points: ['Roads and bridges', 'Drainage systems', 'Site works and community infrastructure'],
+        image: '/images/services/civil-engineering.jpg',
+        alt: 'Road paving and drainage works by Grandeza Construction',
+    },
+    {
+        icon: DraftingCompass,
+        title: 'Design & Planning',
+        text: 'Architectural design and planning that turns your vision into actionable blueprints.',
+        points: ['Architectural design', 'Project planning and blueprints', 'From inception to completion'],
+        image: '/images/services/design-planning.jpg',
+        alt: 'Architect working on building plans with a Grandeza hard hat',
+    },
+    {
+        icon: ClipboardList,
+        title: 'Project Management',
+        text: 'Professional management that keeps your project on time and within budget.',
+        points: ['On-time, on-budget delivery', 'Coordination of all resources', 'One team accountable from start to finish'],
+        image: '/images/services/project-management.jpg',
+        alt: 'Grandeza project manager checking progress on a construction site',
+    },
+    {
+        icon: HardHat,
+        title: 'Renovation & Restoration',
+        text: 'New life for existing structures, with their character preserved.',
+        points: ['Modern upgrades', 'Original character preserved', 'Structural stability assured'],
+        image: '/images/services/renovation-restoration.jpg',
+        alt: 'Grandeza team restoring the facade of a heritage building',
+    },
+    {
+        icon: Handshake,
+        title: 'Consultancy',
+        text: 'Expert advice to help you make informed decisions before you build.',
+        points: ['Construction feasibility', 'Cost estimation', 'Material selection'],
+        image: '/images/services/consultancy.jpg',
+        alt: 'Grandeza consultant advising a client',
+    },
+];
 
 const Services = () => {
+    const gridRef = useRef(null);
+    useCardMotion(gridRef);
     useSEO({
         title: 'Our Services',
         description: 'Explore Grandeza Construction’s full range of services: building construction, civil engineering, project management, road works, and infrastructure development across Ghana.',
@@ -31,37 +87,28 @@ const Services = () => {
             {/* Services Grid */}
             <section className="section-padding">
                 <div className="container">
-                    <div className="services-grid">
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-city"></i></div>
-                            <h3>Building Construction</h3>
-                            <p>High-quality residential and commercial building construction with attention to detail. From foundations to finishing, we ensure structural integrity and aesthetic excellence.</p>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-road"></i></div>
-                            <h3>Civil Engineering</h3>
-                            <p>Expert civil engineering solutions for infrastructure development and community projects, including roads, bridges, and drainage systems.</p>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-drafting-compass"></i></div>
-                            <h3>Design & Planning</h3>
-                            <p>Comprehensive architectural design and project planning from inception to completion. We turn your vision into actionable blueprints.</p>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-tasks"></i></div>
-                            <h3>Project Management</h3>
-                            <p>Professional management ensuring projects are delivered on time and within budget, coordinating all resources for maximum efficiency.</p>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-hard-hat"></i></div>
-                            <h3>Renovation & Restoration</h3>
-                            <p>Breathing new life into existing structures with modern upgrades while preserving their original character and structural stability.</p>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon"><i className="fas fa-handshake"></i></div>
-                            <h3>Consultancy</h3>
-                            <p>Expert advice on construction feasibility, cost estimation, and material selection to help you make informed decisions.</p>
-                        </div>
+                    <div className="services-grid services-grid--photo" ref={gridRef}>
+                        {services.map((sv) => (
+                            <article className="service-card service-card--photo" key={sv.title}>
+                                <span className="service-glare" aria-hidden="true" />
+                                <div className="service-media">
+                                    <img src={sv.image} alt={sv.alt} loading="lazy" decoding="async" />
+                                </div>
+                                <div className="service-body">
+                                    <div className="service-icon"><sv.icon size={28} strokeWidth={1.8} aria-hidden="true" /></div>
+                                    <h3>{sv.title}</h3>
+                                    <p>{sv.text}</p>
+                                    <ul className="service-points">
+                                        {sv.points.map((pt, i) => (
+                                            <li key={pt} style={{ '--i': i }}><CheckCircle size={16} aria-hidden="true" />{pt}</li>
+                                        ))}
+                                    </ul>
+                                    <Link to="/contact" className="service-link">
+                                        Get a quote <ArrowRight size={18} aria-hidden="true" />
+                                    </Link>
+                                </div>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>
